@@ -1,4 +1,22 @@
-eater_than(tree->left, val);
+#include "binary_trees.h"
+#include <stdio.h>
+
+/**
+ * greater_than - check if all values in the tree are greater than a value
+ * @tree: pointer to the tree to check
+ * @val: value to check against
+ *
+ * Return: 1 if true, 0 if false
+ */
+int greater_than(const binary_tree_t *tree, int val)
+{
+	int l, r;
+
+	if (tree == NULL)
+		return (1);
+	if (tree->n > val)
+	{
+		l = greater_than(tree->left, val);
 		r = greater_than(tree->right, val);
 		if (l && r)
 			return (1);
